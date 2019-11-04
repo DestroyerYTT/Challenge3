@@ -6,7 +6,7 @@ public class ItemComplete implements Serializable {
     private String title;
     private int nb_tracks;
     private String picture_small;
-    private Integer nb_fans;
+    private int fans;
     private String description;
     private Track tracks;
 
@@ -17,7 +17,7 @@ public class ItemComplete implements Serializable {
         this.title = title;
         this.nb_tracks = nb_tracks;
         this.picture_small = picture_small;
-        this.nb_fans = nb_fans;
+        this.fans = nb_fans;
         this.description = description;
     }
 
@@ -46,11 +46,11 @@ public class ItemComplete implements Serializable {
     }
 
     public Integer getNb_fans() {
-        return nb_fans;
+        return fans;
     }
 
     public void setNb_fans(Integer nb_fans) {
-        this.nb_fans = nb_fans;
+        this.fans = nb_fans;
     }
 
     public String getDescription() {
@@ -59,6 +59,14 @@ public class ItemComplete implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Track getTracks() {
+        return tracks;
+    }
+
+    public void setTracks(Track tracks) {
+        this.tracks = tracks;
     }
 }
 

@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                         Item item = (Item)listAdapter.getItem(i);
                         long parameter = item.getId();
-                        Intent intent = new Intent(getApplicationContext(), SongActivity.class);
+                        Intent intent = new Intent(getApplicationContext(), PlayListActivity.class);
                         String url = "https://api.deezer.com/playlist/"+parameter;
                         new Thread(
                                 () -> {
@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
                                         runOnUiThread(
                                                 () -> {
                                                     ItemComplete itemComplete = json.fromJson(answer, ItemComplete.class);
-                                                    Log.e(">>", itemComplete.toString());
+                                                    Log.e(">>", "Description"+itemComplete.getDescription());
                                                     intent.putExtra("list", itemComplete);
                                                     startActivity(intent);
 
